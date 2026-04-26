@@ -29,7 +29,7 @@ while play == True:
         decision = input('What would you like to do? A: Look at the autopsy report  B: Look at his medical records  C: Read his story  D: Go back \n')
         if decision.lower() == 'a':
             print('The autopsy report reveals that he died due to suffocation.\n'
-                  'He was found by the servant in his underwear.'
+                  'He was in his bedroom, in only his underwear, and was found by the servant. \n'
                   'When examining the body, there appeared to be grip marks and scratch marks around his throat.\n'
                   'His toxicology report indicates increased levels of histamine.\n')
             time.sleep(1)
@@ -108,8 +108,31 @@ while play == True:
             time.sleep(2)
         elif decision.lower() =='d':
             print("You go through a few cabinets seeing the normal pots and pans. However, on one cabinet, you find a hidden compartment on the bottom with another stack of cash. \n"
-                  "It reads: Emergency funds: $50 000. You count it out, and it checks out.")
+                  "It reads: Emergency funds: $50 000. You count it out, and it checks out. \n")
+            time.sleep(2)
         elif decision.lower() == 'e':
             action = 4
         else:
             print('Your answer must be A, B, C, D, or E')
+
+
+    if action == 7:
+        decision = input('Which object would you like to inspect? A: The medicine cabinet  B: Sink  C: Laundry hamper  D: Shower wall  E: Go back')
+        if decision.lower() == 'a':
+            print("When you open the cabinet, you find pill bottles, average pain relievers, vitamins, and toiletries. \n"
+                  "You decide to take a look at one of the blood pressure pill bottles. \n"
+                  "It is nearly half empty, despite the date of fulfillment being 5 days ago, with a count of 40 pills and instructions to take 1 every day.\n")
+            time.sleep(3)
+        elif decision.lower() == 'b':
+            print("When inspecting the sink, you find dried up streaks of mascara. \n")
+            time.sleep(1)
+        elif decision.lower() == 'c':
+            print("When you open the hamper, you find some guest hand towels that were used. \n")
+            time.sleep(1)
+        elif decision.lower() == 'd':
+            print("You notice an area along the shower wall that looks suspicious, so you press around it and something clicks. \n"
+                  "Another case opens up with stacks of cash. It reads: Emergency funds, $50 000. This time, there's only $40 000 inside, and a note that reads: \n"
+                  '"Consider this my weekly salary" \n')
+            time.sleep(3)
+        elif decision.lower() == 'e':
+            action = 4
