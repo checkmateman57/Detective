@@ -1,6 +1,6 @@
 print('Welcome to this detective game!\n'
       "A rich 50 year old man has is suspected of being murdered, and it's your job to figure out who!\n"
-      "The suspects are his daughter, the cook, the maid, and his past business partner.\n"
+      "The suspects are his daughter, the cook, the butler, and his past business partner.\n"
       "How does the saying go? It may be the one you suspect the least.\n"
       "But anyways, good luck!")
 
@@ -11,6 +11,9 @@ while play == True:
     if action == 1:
         game = input('Would you like to play? ')
         if game.lower() == 'yes':
+            stage1 = 0
+            stage2 = 0
+            stage3 = 0
             action = 2
         elif game.lower() == 'no':
             play = False
@@ -31,13 +34,15 @@ while play == True:
             print('The autopsy report reveals that he died due to suffocation.\n'
                   'He was in his bedroom, in only his underwear, and was found by the servant. \n'
                   'When examining the body, there appeared to be grip marks and scratch marks around his throat.\n'
-                  'His toxicology report indicates increased levels of histamine.\n')
+                  'His toxicology report indicates increased levels of histamine, and a drop in arterial pressure at time of death\n')
             time.sleep(1)
+            stage1 += 1
         elif decision.lower() == 'b':
             print('The medical records reveal that the victim was taking medications for high blood pressure.\n'
                   'Additionally, the victim also has a severe allergy to shellfish and peaches.\n'
                   'Lastly, he had a knee replacement surgery 2 years ago.\n')
             time.sleep(1)
+            stage1 += 1
         elif decision.lower() == 'c':
             print("Alistair Vane was a man who was loved by many and hated by few. At the young age of 15, he figured out a way to harness the energy from the Earth's core\n"
                   "and turn it into electricity, making energy sources like fossil fuels and solar power useless.\n"
@@ -45,6 +50,7 @@ while play == True:
                   "and made sure he treated anyone other than his family as inferior.\n"
                   "After he got rich, Alistair started multiple other businesses for fun, and in recent news he cut off one of his partners for undisclosed reasons.")
             time.sleep(2)
+            stage1 += 1
         elif decision.lower() == 'd':
             action = 2
         else:
@@ -52,28 +58,34 @@ while play == True:
 
 
     if action == 4:
-        decision = input('Which room would you like to inspect? A: The bedroom  B: The kitchen  C: The bathroom  D: The living room  E: Go back \n')
-        if decision.lower() == 'a':
-            action = 5
-        elif decision.lower() == 'b':
-            action = 6
-        elif decision.lower() == 'c':
-            action = 7
-        elif decision.lower() == 'd':
-            action = 8
-        elif decision.lower() == 'e':
+        if stage1 < 1:
+            print('Woah There, please look at minimum 1 thing from the victim first before you can investigate.')
             action = 2
         else:
-            print('Your answer must be A, B, C, D, or E')
+            decision = input('Which room would you like to inspect? A: The bedroom  B: The kitchen  C: The bathroom  D: The living room  E: Go back \n')
+            if decision.lower() == 'a':
+                action = 5
+            elif decision.lower() == 'b':
+                action = 6
+            elif decision.lower() == 'c':
+                action = 7
+            elif decision.lower() == 'd':
+                action = 8
+            elif decision.lower() == 'e':
+                action = 2
+            else:
+                print('Your answer must be A, B, C, D, or E')
 
     if action == 5:
         decision = input('Which object would you like to inspect? A: The night stand  B: The closet  C: A journal  D: A suspicious looking wall  E: Go back \n')
         if decision.lower() == 'a':
             print("When looking through the night stand, you find an empty bottle of his blood pressure pills.\n")
             time.sleep(1)
+            stage2 += 1
         elif decision.lower() == 'b':
             print("When you open the closet, it is filled with pristine clothes. However, you notice that one of the shirts hanging seems to be stained with marinara sauce.\n")
             time.sleep(1)
+            stage2 += 1
         elif decision.lower() =='c':
             print("Journals are always great to find clues. You go the most recent entries and find one dated the day he died.\n"
                   "It reads: One of my old business partners came today to have a chat with me. We had a nice meal and drink, and then he went on his way.\n")
@@ -81,12 +93,14 @@ while play == True:
             print('You decide to go to another entry a few days ago that reads:\n'
                   ' My daughter came today asking for money to buy a designer purse. I declined, she needs to learn how to make money. She was very upset with me.\n')
             time.sleep(2)
+            stage2 += 1
         elif decision.lower() == 'd':
             print('You feel along a wall and notice some hairline gaps in the shape of a square. You knock in that area, and it feels a little hollow.\n'
                   'After more searching, you find a button underneath the bed and press it, and the area along the wall opens.\n'
                   'In it, you find blocks of cash along with a note: Emergency funds, $100 000 in this location.\n'
-                  'You count the money: Exactly $100 000.')
+                  'You count the money: Exactly $100 000. \n')
             time.sleep(3)
+            stage2 += 1
         elif decision.lower() == 'e':
             action = 4
         else:
@@ -98,18 +112,22 @@ while play == True:
         if decision.lower() == 'a':
             print("When you take a look inside the trash can, you find clam shells, and another empty bottle of his pills.\n")
             time.sleep(1)
+            stage2 += 1
         elif decision.lower() == 'b':
             print("In the sink you find some dirty dishes. A few of the plates look like pasta has been eaten from them. \n"
                   "The others show remnants of pastries, and you find a couple cups with bits of coffee grounds of the bottom.\n")
             time.sleep(2)
+            stage2 += 1
         elif decision.lower() == 'c':
             print("When you inspect the fridge, it all seems normal. There's your cheeses, fruits, vegetables, and deli meats. \n"
                   "When you look at the freezer, it's filled with beef, pork, and lamb. But you also see some clams and shrimp. \n")
             time.sleep(2)
+            stage2 += 1
         elif decision.lower() =='d':
             print("You go through a few cabinets seeing the normal pots and pans. However, on one cabinet, you find a hidden compartment on the bottom with another stack of cash. \n"
                   "It reads: Emergency funds: $50 000. You count it out, and it checks out. \n")
             time.sleep(2)
+            stage2 += 1
         elif decision.lower() == 'e':
             action = 4
         else:
@@ -123,17 +141,21 @@ while play == True:
                   "You decide to take a look at one of the blood pressure pill bottles. \n"
                   "It is nearly half empty, despite the date of fulfillment being 5 days ago, with a count of 40 pills and instructions to take 1 every day.\n")
             time.sleep(3)
+            stage2 += 1
         elif decision.lower() == 'b':
             print("When inspecting the sink, you find dried up streaks of mascara. \n")
             time.sleep(1)
+            stage2 += 1
         elif decision.lower() == 'c':
             print("When you open the hamper, you find some guest hand towels that were used. \n")
             time.sleep(1)
+            stage2 += 1
         elif decision.lower() == 'd':
             print("You notice an area along the shower wall that looks suspicious, so you press around it and something clicks. \n"
                   "Another case opens up with stacks of cash. It reads: Emergency funds, $50 000. This time, there's only $40 000 inside, and a note that reads: \n"
                   '"Consider this my weekly salary" \n')
             time.sleep(3)
+            stage2 += 1
         elif decision.lower() == 'e':
             action = 4
         else:
@@ -146,20 +168,24 @@ while play == True:
             print("When you get down and look at the carpet, you notice a sauce stain, so you decide to look into it further. \n"
                   "You go to the trash to see some spaghetti noodles, and they smell a little ocean-like. \n")
             time.sleep(2)
+            stage2 += 1
         elif decision.lower() == 'b':
             print("You go to the desk and find a laptop open with an email chain. It's between Alistair and his daughter. \n"
                   "Alistair has the second last message saying I'm cutting your allowance to $10 000 a month. You need to get a job and earn money. \n"
                   "His daughter responded with Screw you Dad! I'm going to make you pay me more.")
             time.sleep(3)
+            stage2 += 1
         elif decision.lower() == 'c':
             print("You look over a comfy chair, and see a note tucked in between the armrest and the cushion. \n"
                   'It reads: "I will make sure the world knows what kind of person you are. Just because you invented some energy source 30 years ago does not mean you are God." \n')
             time.sleep(2)
+            stage2 += 1
         elif decision.lower() == 'd':
             print("The painting seems interesting enough but you've read mystery books before. \n"
                   "You take the painting off, and behind is another stack of cash, with a note. \n"
-                  '"Emergency funds: $27 000" There is $27000 inside, but the type of writing on the note seems a bit more feminine. \n')
+                  '"Emergency funds: $27 000" There is $27000 inside, but the type of writing on the note seems a bit feminine. \n')
             time.sleep(3)
+            stage2 += 1
         elif decision.lower() == 'e':
             action = 4
         else:
