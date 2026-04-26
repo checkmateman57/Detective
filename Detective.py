@@ -69,7 +69,8 @@ while play == True:
     if action == 5:
         decision = input('Which object would you like to inspect? A: The night stand  B: The closet  C: A journal  D: A suspicious looking wall  E: Go back \n')
         if decision.lower() == 'a':
-            print("When looking through the night stand, you find an empty bottle of his blood pressure pills.")
+            print("When looking through the night stand, you find an empty bottle of his blood pressure pills.\n")
+            time.sleep(1)
         elif decision.lower() == 'b':
             print("When you open the closet, it is filled with pristine clothes. However, you notice that one of the shirts hanging seems to be stained with marinara sauce.\n")
             time.sleep(1)
@@ -90,3 +91,25 @@ while play == True:
             action = 4
         else:
             print('Your answer must be A, B, C, D or E')
+
+
+    if action == 6:
+        decision = input('What would you like to inspect? A: The trash  B: The sink  C: The fridge  D: Cabinets  E: Go back \n')
+        if decision.lower() == 'a':
+            print("When you take a look inside the trash can, you find clam shells, and another empty bottle of his pills.\n")
+            time.sleep(1)
+        elif decision.lower() == 'b':
+            print("In the sink you find some dirty dishes. A few of the plates look like pasta has been eaten from them. \n"
+                  "The others show remnants of pastries, and you find a couple cups with bits of coffee grounds of the bottom.\n")
+            time.sleep(2)
+        elif decision.lower() == 'c':
+            print("When you inspect the fridge, it all seems normal. There's your cheeses, fruits, vegetables, and deli meats. \n"
+                  "When you look at the freezer, it's filled with beef, pork, and lamb. But you also see some clams and shrimp. \n")
+            time.sleep(2)
+        elif decision.lower() =='d':
+            print("You go through a few cabinets seeing the normal pots and pans. However, on one cabinet, you find a hidden compartment on the bottom with another stack of cash. \n"
+                  "It reads: Emergency funds: $50 000. You count it out, and it checks out.")
+        elif decision.lower() == 'e':
+            action = 4
+        else:
+            print('Your answer must be A, B, C, D, or E')
