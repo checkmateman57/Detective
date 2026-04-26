@@ -117,7 +117,7 @@ while play == True:
 
 
     if action == 7:
-        decision = input('Which object would you like to inspect? A: The medicine cabinet  B: Sink  C: Laundry hamper  D: Shower wall  E: Go back')
+        decision = input('Which object would you like to inspect? A: The medicine cabinet  B: Sink  C: Laundry hamper  D: Shower wall  E: Go back \n')
         if decision.lower() == 'a':
             print("When you open the cabinet, you find pill bottles, average pain relievers, vitamins, and toiletries. \n"
                   "You decide to take a look at one of the blood pressure pill bottles. \n"
@@ -136,3 +136,31 @@ while play == True:
             time.sleep(3)
         elif decision.lower() == 'e':
             action = 4
+        else:
+            print('Your answer must be A, B, C, D, or E')
+
+
+    if action == 8:
+        decision = input("Which object would you like to inspect? A: The carpet  B: The desk  C: A chair  D: A painting on the wall  E: Go back \n")
+        if decision.lower() == 'a':
+            print("When you get down and look at the carpet, you notice a sauce stain, so you decide to look into it further. \n"
+                  "You go to the trash to see some spaghetti noodles, and they smell a little ocean-like. \n")
+            time.sleep(2)
+        elif decision.lower() == 'b':
+            print("You go to the desk and find a laptop open with an email chain. It's between Alistair and his daughter. \n"
+                  "Alistair has the second last message saying I'm cutting your allowance to $10 000 a month. You need to get a job and earn money. \n"
+                  "His daughter responded with Screw you Dad! I'm going to make you pay me more.")
+            time.sleep(3)
+        elif decision.lower() == 'c':
+            print("You look over a comfy chair, and see a note tucked in between the armrest and the cushion. \n"
+                  'It reads: "I will make sure the world knows what kind of person you are. Just because you invented some energy source 30 years ago does not mean you are God." \n')
+            time.sleep(2)
+        elif decision.lower() == 'd':
+            print("The painting seems interesting enough but you've read mystery books before. \n"
+                  "You take the painting off, and behind is another stack of cash, with a note. \n"
+                  '"Emergency funds: $27 000" There is $27000 inside, but the type of writing on the note seems a bit more feminine. \n')
+            time.sleep(3)
+        elif decision.lower() == 'e':
+            action = 4
+        else:
+            print('Your answer must be A, B, C, D, or E')
