@@ -404,15 +404,15 @@ while play == True:
                                              "A: Why's he paying you so high? \n"
                                              "B: Has he at least complimented your cooking? \n")
                             if decision.lower() == 'a':
-                                print("Because the guy is made of money, 30k is pocket change. Also, I'n sure he wants the best the market has to offer, and I'm the best. \n")
+                                print("Because the guy is made of money, 30k is pocket change. Also, I'm sure he wants the best the market has to offer, and I'm the best. \n")
                                 time.sleep(1)
                                 answer1 = True
                                 print('Anything else you would like to tell me?')
                                 time.sleep(2)
                                 print("No, that's all.")
                                 time.sleep(1)
-                                print('Your interview with the butler has finished')
-                                ButlerInterrogation = True
+                                print('Your interview with the cook has finished')
+                                CookInterrogation = True
                                 answer = True
                                 action = 9
                             elif decision.lower() == 'b':
@@ -423,8 +423,8 @@ while play == True:
                                 time.sleep(2)
                                 print("No, that's all.")
                                 time.sleep(1)
-                                print('Your interview with the butler has finished')
-                                ButlerInterrogation = True
+                                print('Your interview with the cook has finished')
+                                CookInterrogation = True
                                 answer = True
                                 action = 9
                             else:
@@ -447,8 +447,8 @@ while play == True:
                                 time.sleep(2)
                                 print("No, that's all.")
                                 time.sleep(1)
-                                print('Your interview with the butler has finished')
-                                ButlerInterrogation = True
+                                print('Your interview with the cook has finished')
+                                CookInterrogation = True
                                 answer = True
                                 action = 9
                             elif decision.lower() == 'b':
@@ -459,8 +459,8 @@ while play == True:
                                 time.sleep(2)
                                 print("No, that's all.")
                                 time.sleep(1)
-                                print('Your interview with the butler has finished')
-                                ButlerInterrogation = True
+                                print('Your interview with the cook has finished')
+                                CookInterrogation = True
                                 answer = True
                                 action = 9
                             else:
@@ -493,31 +493,49 @@ while play == True:
                             answer = True
                             action = 9
                         else:
+                            answer = True
                             answer1 = False
-                            decision = input("What would you like to ask next? \n"
-                                             "A: And does food ever leave the kitchen, Where do you eat? \n"
-                                             "B: I noticed some clams, do you have anything to say about that? \n")
-                            if decision.lower() == 'a':
-                                print("Me and the butler eat in the kitchen, while I go through the living room to Alistair's room and give him his food.")
-                                time.sleep(1)
-                                print('Anything else you would like to tell me?')
-                                time.sleep(2)
-                                print("No, that's all.")
-                                time.sleep(1)
-                                print('Your interview with the cook has finished')
-                                CookInterrogation = True
-                                answer = True
-                                action = 9
-                            elif decision.lower() == 'b':
-                                print("Oh yeah, about that. That was for me and the butler, cus Alistair's allergic.")
-                                time.sleep(1)
-                                print('Anything else you would like to tell me?')
-                                time.sleep(2)
-                                print("No, that's all.")
-                                time.sleep(1)
-                                print('Your interview with the cook has finished')
-                                CookInterrogation = True
-                                answer = True
-                                action = 9
-                            else:
-                                print('Your answer must be A or B')
+                            while answer1 == False:
+                                decision = input("What would you like to ask next? \n"
+                                                 "A: And does food ever leave the kitchen, Where do you eat? \n"
+                                                 "B: I noticed some clams, do you have anything to say about that? \n")
+                                if decision.lower() == 'a':
+                                    print("Me and the butler eat in the kitchen, while I go through the living room to Alistair's room and give him his food.")
+                                    time.sleep(1)
+                                    print('Anything else you would like to tell me?')
+                                    time.sleep(2)
+                                    print("No, that's all.")
+                                    time.sleep(1)
+                                    print('Your interview with the cook has finished')
+                                    CookInterrogation = True
+                                    answer1 = True
+                                    action = 9
+                                elif decision.lower() == 'b':
+                                    print("Oh yeah, about that. That was for me and the butler, cus Alistair's allergic.")
+                                    time.sleep(1)
+                                    print('Anything else you would like to tell me?')
+                                    time.sleep(2)
+                                    print("No, that's all.")
+                                    time.sleep(1)
+                                    print('Your interview with the cook has finished')
+                                    CookInterrogation = True
+                                    answer1 = True
+                                    action = 9
+                                else:
+                                    print('Your answer must be A or B')
+                    elif decision.lower() == 'b':
+                        print('No, nothing happened, it was business as usual. Maybe the butler came into the kitchen a few times but that was all. \n')
+                        time.sleep(1)
+                        answer = True
+                        print('Anything else you would like to tell me?')
+                        time.sleep(2)
+                        print("No, that's all.")
+                        time.sleep(1)
+                        print('Your interview with the cook has finished')
+                        CookInterrogation = True
+                        answer1 = True
+                        action = 9
+                    else:
+                        print('Your answer must be A or B')
+            else:
+                print('Your answer must be A or B')
