@@ -14,6 +14,14 @@ while play == True:
             stage1 = 0
             stage2 = 0
             stage3 = 0
+            ButlerEvidence = False
+            CookEvidence = False
+            DaughterEvidence = False
+            PartnerEvidence = False
+            ButlerInterrogation = False
+            CookInterrogation = False
+            PartnerInterrogation = False
+            DaughterInterrogation = False
             action = 2
         elif game.lower() == 'no':
             play = False
@@ -21,11 +29,13 @@ while play == True:
             print('Your answer must be yes or no.')
 
     if action == 2:
-        decision =  input('What would you like to do? A: Look at the victim  B: Investigate the crime scene  C: Interrogate the suspects \n')
+        decision =  input('What would you like to do? A: Look at the victim  B: Investigate the crime scene  C: Interrogate the suspects D: Make your arrest \n')
         if decision.lower() == 'a':
             action = 3
         elif decision.lower() == 'b':
             action = 4
+        elif decision.lower() == 'c':
+            action = 9
 
 
     if action == 3:
@@ -76,10 +86,12 @@ while play == True:
             else:
                 print('Your answer must be A, B, C, D, or E')
 
+
     if action == 5:
         decision = input('Which object would you like to inspect? A: The night stand  B: The closet  C: A journal  D: A suspicious looking wall  E: Go back \n')
         if decision.lower() == 'a':
             print("When looking through the night stand, you find an empty bottle of his blood pressure pills.\n")
+            ButlerEvidence = True
             time.sleep(1)
             stage2 += 1
         elif decision.lower() == 'b':
@@ -112,6 +124,8 @@ while play == True:
         if decision.lower() == 'a':
             print("When you take a look inside the trash can, you find clam shells, and another empty bottle of his pills.\n")
             time.sleep(1)
+            ButlerEvidence = True
+            CookEvidence = True
             stage2 += 1
         elif decision.lower() == 'b':
             print("In the sink you find some dirty dishes. A few of the plates look like pasta has been eaten from them. \n"
@@ -141,6 +155,7 @@ while play == True:
                   "You decide to take a look at one of the blood pressure pill bottles. \n"
                   "It is nearly half empty, despite the date of fulfillment being 5 days ago, with a count of 40 pills and instructions to take 1 every day.\n")
             time.sleep(3)
+            ButlerEvidence = True
             stage2 += 1
         elif decision.lower() == 'b':
             print("When inspecting the sink, you find dried up streaks of mascara. \n")
@@ -154,6 +169,7 @@ while play == True:
             print("You notice an area along the shower wall that looks suspicious, so you press around it and something clicks. \n"
                   "Another case opens up with stacks of cash. It reads: Emergency funds, $50 000. This time, there's only $40 000 inside, and a note that reads: \n"
                   '"Consider this my weekly salary" \n')
+            PartnerEvidence = True
             time.sleep(3)
             stage2 += 1
         elif decision.lower() == 'e':
@@ -167,6 +183,7 @@ while play == True:
         if decision.lower() == 'a':
             print("When you get down and look at the carpet, you notice a sauce stain, so you decide to look into it further. \n"
                   "You go to the trash to see some spaghetti noodles, and they smell a little ocean-like. \n")
+            CookEvidence = True
             time.sleep(2)
             stage2 += 1
         elif decision.lower() == 'b':
@@ -179,14 +196,179 @@ while play == True:
             print("You look over a comfy chair, and see a note tucked in between the armrest and the cushion. \n"
                   'It reads: "I will make sure the world knows what kind of person you are. Just because you invented some energy source 30 years ago does not mean you are God." \n')
             time.sleep(2)
+            PartnerEvidence = True
             stage2 += 1
         elif decision.lower() == 'd':
             print("The painting seems interesting enough but you've read mystery books before. \n"
                   "You take the painting off, and behind is another stack of cash, with a note. \n"
                   '"Emergency funds: $27 000" There is $27000 inside, but the type of writing on the note seems a bit feminine. \n')
+            DaughterEvidence = True
             time.sleep(3)
             stage2 += 1
         elif decision.lower() == 'e':
             action = 4
         else:
             print('Your answer must be A, B, C, D, or E')
+
+
+    if action == 9:
+        decision = input('Who would you like to interrogate? A: The butler  B: The cook  C: The daughter  D: The business partner  E: Go back \n'
+                         'Please note: You can only interrogate them one time. \n')
+        if decision.lower() == 'a':
+            action = 10
+        elif decision.lower() == 'b':
+            action = 11
+        elif decision.lower() == 'c':
+            action = 12
+        elif decision.lower() == 'd':
+            action = 13
+        elif decision.lower() == 'e':
+            action = 2
+        else:
+            print('Your answer must be A, B, C, D, or E')
+
+    if action == 10:
+        if ButlerInterrogation == True:
+            print("You already interrogated the butler! You can't do that again")
+            action = 9
+        else:
+            decision = input('You are now interrogating the butler. Before we start, would you like to know some background info on the butler? \n')
+            if decision.lower() == 'yes':
+                print("The butler is a 25 year old male, and holds a warehouse job during the night. He's trying to support his parents as well, as they are struggling. \n"
+                      "His parents also suffer from blood pressure issues, and bottles are getting expensive. \n")
+            decision = input('What would you like to ask the butler? \n'
+                             'A: What were you doing up to the moment of his death? \n'
+                             'B: What are your duties as a butler to Alistair? \n')
+            if decision.lower() == 'a':
+                print("I was having dinner with the cook in the kitchen, and when I finished my meal, I went to check on Alistair.")
+                answer = False
+                while answer == False:
+                    decision = input('What is your next question? \n'
+                                     'A: What did you have for dinner? \n'
+                                     "B: Did you hear anything coming from Alistair's room? \n")
+                    if decision.lower() == 'a':
+                        print('I had a seafood pasta for dinner.')
+                        time.sleep(1)
+                        print('Anything else you would like to tell me?')
+                        time.sleep(2)
+                        print("No, that's all.")
+                        time.sleep(1)
+                        print('Your interview with the butler has finished')
+                        ButlerInterrogation = True
+                        answer = True
+                        action = 9
+                    elif decision.lower() == 'b':
+                        print("No, I can't say that I did")
+                        time.sleep(1)
+                        print("And when you went into the room, what did you see? \n")
+                        time.sleep(1)
+                        print("I saw Alistair down on the bed, with food sprawled over him, he wasn't breathing, and he had no pulse. He was dead. \n")
+                        time.sleep(1)
+                        print('Anything else you would like to tell me?')
+                        time.sleep(2)
+                        print("No, that's all.")
+                        time.sleep(1)
+                        print('Your interview with the butler has finished')
+                        ButlerInterrogation = True
+                        answer = True
+                        action = 9
+                    else:
+                        print('Your answer must be A or B')
+            elif decision.lower() == 'b':
+                print("My duties involve greeting guests, helping Alistair with tasks, such as giving him his medication, selecting/prepping his clothes, and getting him drinks. \n")
+                time.sleep(1)
+                answer = False
+                while answer == False:
+                    decision = input('What would your next question be? \n'
+                                     'A: Had Alistair been acting weird today, or saying anything unusual? \n'
+                                     'B: Could you go more into length about his medication, such as when you give him the pills, how many, stuff like that? \n')
+                    if decision.lower() == 'a':
+                        print('Alistair had a couple visitors today, his daughter and his old business partner. After both of them had their visits, we were having a conversation. \n'
+                              'He was saying about he was afraid of his daughter, and for his business partner, he was expressing dissatisfaction.')
+                        time.sleep(2)
+                        answer = True
+                        answer1 = False
+                        while answer1 == False:
+                            decision = input('What is your next question? \n'
+                                             'A: What did he say about his daughter? \n'
+                                             'B: What did he say about his old business partner? \n')
+                            if decision.lower() == 'a':
+                                print("He said that he was concerned that she wouldn't survive out in the real world without depending on him for money, \n"
+                                      "and that she might go to drastic measures to get her money. \n")
+                                time.sleep(3)
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the butler has finished')
+                                ButlerInterrogation = True
+                                answer1 = True
+                                action = 9
+                            elif decision.lower() == 'b':
+                                print("He said that he hasn't realized yet that his proposed business model was stupid, and that he would cost the company millions. \n"
+                                      "He is still quite angry at me for firing him. \n")
+                                time.sleep(2)
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the butler has finished')
+                                ButlerInterrogation = True
+                                answer1 = True
+                                action = 9
+                            else:
+                                print('Your answer must be A or B')
+                    elif decision.lower() == 'b':
+                        print("When we talk about administering his blood pressure medication, it's usually once per day, along with his meal. \n"
+                              "If his blood pressure is unusually bad, I'll give him 2 for the day\n")
+                        time.sleep(2)
+                        answer = True
+                        if ButlerEvidence == False:
+                            print('When did you give him his medication on the day of his death?')
+                            time.sleep(3)
+                            print('I gave him his medication along with dinner, due to his visitors earlier in the day.')
+                            time.sleep(2)
+                            print('Anything else you would like to tell me?')
+                            time.sleep(2)
+                            print("No, that's all.")
+                            time.sleep(1)
+                            print('Your interview with the butler has finished')
+                            ButlerInterrogation = True
+                            action = 9
+                        else:
+                            answer1 = False
+                            while answer1 == False:
+                                decision = input("What is your next question? \n"
+                                                 "A: When did you give him his medication on the day of his death? \n"
+                                                 "B: I've noticed a few empty pill bottles, care to explain that for me? \n")
+                                if decision.lower() == 'a':
+                                    print('I gave him his medication along with dinner, due to his visitors earlier in the day.')
+                                    time.sleep(2)
+                                    print('Anything else you would like to tell me?')
+                                    time.sleep(2)
+                                    print("No, that's all.")
+                                    time.sleep(1)
+                                    print('Your interview with the butler has finished')
+                                    ButlerInterrogation = True
+                                    answer1 = True
+                                    action = 9
+                                elif decision.lower() == 'b':
+                                    print("The butler starts breaking down about how he's been stealing pills from Alistair so his parents could get the medication they needed. \n"
+                                          "He starts breaking down about how poor they are, and how this was the only way they could get their pills in a continuous stream. \n"
+                                          "He pleads that you don't arrest him, since it didn't hurt Alistair in any way.")
+                                    decision = input('Will you arrest him? Yes or no \n')
+                                    if decision.lower() == 'yes':
+                                        print('You arrest the butler and he is taken away')
+                                    else:
+                                        print('The butler thanks you many times over.')
+                                    print('Your interview with the butler has finished')
+                                    ButlerInterrogation = True
+                                    answer1 = True
+                                    action = 9
+                                else:
+                                    print('Your answer must be A or B')
+                else:
+                    print('Your answer must be A or B')
+
+            else:
+                print('You must choose A or B')
