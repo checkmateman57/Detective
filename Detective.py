@@ -372,3 +372,152 @@ while play == True:
 
             else:
                 print('You must choose A or B')
+
+
+    if action == 11:
+        if CookInterrogation == True:
+            print("You already interrogated the cook! You can't do that again.")
+            action = 9
+        else:
+            decision = input('You are now interrogating the cook. Before we start, would you like to have some background info on the cook? \n')
+            if decision.lower() == 'yes':
+                print('The cook is a single 24 year old, who recently graduated from culinary school. He lives by himself in a rented apartment, and can be described as quite egotistical. \n')
+                time.sleep(2)
+            decision = input('What would you like to ask? \n'
+                             'A: How is your relationship with Alistair? \n'
+                             'B: What were you doing the evening when Alistair died? \n')
+            if decision.lower() == 'a':
+                print("In all honesty, I wouldn't say we had a good relationship. He kept insulting my cooking disliked some of my dishes, so I wasn't very happy with him.")
+                time.sleep(1)
+                answer = False
+                while answer == False:
+                    decision = input('What would you like to ask next? \n'
+                                     "A: If you don't like him, why did you continue to work for him? \n"
+                                     "B: Has there been any tension between the two of you lately? \n")
+                    if decision.lower() == 'a':
+                        print("Because it pays well, I'm getting $30 000 a month. \n")
+                        time.sleep(1)
+                        answer = True
+                        answer1 = False
+                        while answer1 == False:
+                            decision = input('What would you like to ask next? \n'
+                                             "A: Why's he paying you so high? \n"
+                                             "B: Has he at least complimented your cooking? \n")
+                            if decision.lower() == 'a':
+                                print("Because the guy is made of money, 30k is pocket change. Also, I'n sure he wants the best the market has to offer, and I'm the best. \n")
+                                time.sleep(1)
+                                answer1 = True
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the butler has finished')
+                                ButlerInterrogation = True
+                                answer = True
+                                action = 9
+                            elif decision.lower() == 'b':
+                                print('He has, but rarely does. He does seem to like my Beef Wellington the most though.')
+                                time.sleep(1)
+                                answer1 = True
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the butler has finished')
+                                ButlerInterrogation = True
+                                answer = True
+                                action = 9
+                            else:
+                                print('Your answer must be A or B')
+                    elif decision.lower() == 'b':
+                        print('Actually we did. Last week, he was telling me that my steak was overcooked, when I knew that is was a pristine medium rare. \n'
+                              'We got into an argument about it. \n')
+                        time.sleep(2)
+                        answer = True
+                        answer1 = False
+                        while answer1 == False:
+                            decision = input('What would you like to ask next? \n'
+                                             'A: What did you do after your argument? \n'
+                                             "B: How would've you liked to respond to him? \n")
+                            if decision.lower() == 'a':
+                                print("I honestly was ready to start looking for new jobs, but he's paying me pretty well, and I need to pay off culinary school. \n")
+                                time.sleep(1)
+                                answer1 = True
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the butler has finished')
+                                ButlerInterrogation = True
+                                answer = True
+                                action = 9
+                            elif decision.lower() == 'b':
+                                print("I would've like to get some random dude off the street to cook him a steak and see how he likes it so he can start appreciating me. \n")
+                                time.sleep(1)
+                                answer1 = True
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the butler has finished')
+                                ButlerInterrogation = True
+                                answer = True
+                                action = 9
+                            else:
+                                print('Your answer must be A or B')
+                    else:
+                        print('Your answer must be A or B')
+            elif decision.lower() == 'b':
+                print('I was in the kitchen as normal, making dinner.')
+                time.sleep(1)
+                answer = False
+                while answer == False:
+                    decision = input('What would you like to ask next? \n'
+                                     'A: What did you make for dinner? \n'
+                                     'B: Did anything unusual happen while making dinner? \n')
+                    if decision.lower() == 'a':
+                        print('I was making a pasta with a tomato sauce base and some ground beef as the protein.')
+                        time.sleep(1)
+                        answer = True
+                        if CookEvidence == False:
+                            print("And does food ever leave the kitchen? Where do you eat?")
+                            time.sleep(1)
+                            print("Me and the butler eat in the kitchen, while I go through the living room to Alistair's room and give him his food.")
+                            time.sleep(1)
+                            print('Anything else you would like to tell me?')
+                            time.sleep(2)
+                            print("No, that's all.")
+                            time.sleep(1)
+                            print('Your interview with the cook has finished')
+                            CookInterrogation = True
+                            answer = True
+                            action = 9
+                        else:
+                            answer1 = False
+                            decision = input("What would you like to ask next? \n"
+                                             "A: And does food ever leave the kitchen, Where do you eat? \n"
+                                             "B: I noticed some clams, do you have anything to say about that? \n")
+                            if decision.lower() == 'a':
+                                print("Me and the butler eat in the kitchen, while I go through the living room to Alistair's room and give him his food.")
+                                time.sleep(1)
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the cook has finished')
+                                CookInterrogation = True
+                                answer = True
+                                action = 9
+                            elif decision.lower() == 'b':
+                                print("Oh yeah, about that. That was for me and the butler, cus Alistair's allergic.")
+                                time.sleep(1)
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the cook has finished')
+                                CookInterrogation = True
+                                answer = True
+                                action = 9
+                            else:
+                                print('Your answer must be A or B')
