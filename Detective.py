@@ -190,6 +190,7 @@ while play == True:
             print("You go to the desk and find a laptop open with an email chain. It's between Alistair and his daughter. \n"
                   "Alistair has the second last message saying I'm cutting your allowance to $10 000 a month. You need to get a job and earn money. \n"
                   "His daughter responded with Screw you Dad! I'm going to make you pay me more.")
+            DaughterEvidence = True
             time.sleep(3)
             stage2 += 1
         elif decision.lower() == 'c':
@@ -535,6 +536,191 @@ while play == True:
                         CookInterrogation = True
                         answer1 = True
                         action = 9
+                    else:
+                        print('Your answer must be A or B')
+            else:
+                print('Your answer must be A or B')
+
+
+    if action == 12:
+        if DaughterInterrogation == True:
+            print("You already interrogated the daughter! You can't do that again.")
+            action = 9
+        else:
+            decision = input('You are now interrogating the daughter. Before you start, would you like to have some background information? \n')
+            if decision.lower() == 'yes':
+                print("Alistair's daughter is 20 years old, and single. As a kid, she constantly got spoiled and got everything she wanted. \n"
+                      "In the past couple of years, Alistair realized his mistake and started spending less money on her, until she hopefully became self-sufficient. \n"
+                      "However, it takes a long time for a bad habit to get fixed, especially if they grew up that way...\n")
+                time.sleep(3)
+            decision = input('What would you like to ask? \n'
+                             'A: How is your relationship with your father? \n'
+                             'B: What happened during your visit that day? \n')
+            if decision.lower() == 'a':
+                print("Right now our relationship isn't too good. He's cutting me off financially. But I wouldn't kill him for that. ")
+                time.sleep(1)
+                answer = False
+                while answer == False:
+                    decision = input("What would you like to ask next? \n"
+                                     "A: So then how are you surviving with being cut off? \n"
+                                     "B: Do you know of anyone else who might need money? \n")
+                    if decision.lower() == 'a':
+                        print("I drastically reduced my spending, and I'm looking at getting a job. \n")
+                        time.sleep(1)
+                        answer = True
+                        if DaughterEvidence == True:
+                            answer1 = False
+                            while answer1 == False:
+                                decision = input("What would you like to ask next? \n"
+                                                 "A: I noticed an e-mail chain saying how you'd make your dad pay. Care to explain? \n"
+                                                 "B: Can you write the words Emergency Funds: $27 000? \n")
+                                if decision.lower() == 'a':
+                                    print("I was planning on suing my dad for leaving me unable to function in the real world, so I could get some money. \n")
+                                    time.sleep(1)
+                                    print('Anything else you would like to tell me?')
+                                    time.sleep(2)
+                                    print("No, that's all.")
+                                    time.sleep(1)
+                                    print('Your interview with the daughter has finished')
+                                    DaughterInterrogation = True
+                                    answer1 = True
+                                    action = 9
+                                elif decision.lower() == 'b':
+                                    print('She writes the words, and as you compare them with the note you found in the living room, they match. \n')
+                                    time.sleep(2)
+                                    print('Anything else you would like to tell me?')
+                                    time.sleep(2)
+                                    print("No, that's all.")
+                                    time.sleep(1)
+                                    print('Your interview with the daughter has finished')
+                                    DaughterInterrogation = True
+                                    answer1 = True
+                                    action = 9
+                                else:
+                                    print('Your answer must be A or B')
+                        else:
+                            print('Anything else you would like to tell me?')
+                            time.sleep(2)
+                            print("No, that's all.")
+                            time.sleep(1)
+                            print('Your interview with the daughter has finished')
+                            DaughterInterrogation = True
+                            action = 9
+                    elif decision.lower() == 'b':
+                        print("I'm pretty sure the butler needs money to support his family, and the cook needs to pay off student loans. \n"
+                              "One of his old business partners is looking for compensation as well. \n")
+                        time.sleep(2)
+                        answer = True
+                        answer1 = False
+                        while answer1 == False:
+                            decision = input('What would you like to ask next? \n'
+                                             'A: Tell me more about his old business partner. \n'
+                                             'B: Would any of them kill him for his money? \n')
+                            if decision.lower() == 'a':
+                                print('Well he started some random business with this guy, and I believe his partner came up to him with a proposition at one point. \n'
+                                      'My dad got pretty angry at him for such an idea, and proceeded to remove him as partner. That got his partner pretty riled up.\n')
+                                time.sleep(2)
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the daughter has finished')
+                                DaughterInterrogation = True
+                                answer1 = True
+                                action = 9
+                            elif decision.lower() == 'b':
+                                print("The butler seems to nice of a guy and pretty fearful, so I wouldn't think it's him. I haven't had much interaction with the cook, but he's pretty chill. \n"
+                                      "As for the old business partner, depending on how much pent up anger he has, he might have done something to my father. \n")
+                                time.sleep(2)
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the daughter has finished')
+                                DaughterInterrogation = True
+                                answer1 = True
+                                action = 9
+                            else:
+                                print('Your answer must be A or B')
+                    else:
+                        print('Your answer must be A or B')
+            elif decision.lower() == 'b':
+                print('I came in to have a chat with my father, and I wanted him to buy me a designer purse all my friends had. He said no')
+                time.sleep(1)
+                answer = False
+                while answer == False:
+                    decision = input("What would you like to ask next? \n"
+                                     "A: How did you respond to his rejection? \n"
+                                     "B: When was the last time he's accepted purchasing stuff like that for you? \n")
+                    if decision.lower() == 'a':
+                        print("I kind of expected it, but I still got angry at him, telling how hard my life's been since he's cut me off, and how he ruined me. \n")
+                        time.sleep(1)
+                        answer = True
+                        answer1 = False
+                        while answer1 == False:
+                            decision = input("What would you like to ask next? \n"
+                                                     "A: How do you survive now with less money? \n"
+                                                     "B: Has he tried helping you get on your feet? \n")
+                            if decision.lower() == 'a':
+                                print("I still get a small allowance, and I'm looking at jobs. I can live, but I can't live comfortably. \n")
+                                time.sleep(1)
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the daughter has finished')
+                                DaughterInterrogation = True
+                                answer1 = True
+                                action = 9
+                            elif decision.lower() == 'b':
+                                print("I mean he's given me some allowance and some advice on how to stay afloat, but I think he's trying to make me more independent, so therefore not really. \n"
+                                      "I think he's getting more harsh on me now. \n")
+                                time.sleep(2)
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the daughter has finished')
+                                DaughterInterrogation = True
+                                answer1 = True
+                                action = 9
+                            else:
+                                print('Your answer must be A or B')
+                    elif decision.lower() == 'b':
+                        print("He hasn't bought anything really expensive for me for like a year now. I understand why, but I still don't like the reason why.\n")
+                        time.sleep(1)
+                        answer = True
+                        answer1 = False
+                        while answer1 == False:
+                            decision = input("What would you like to ask next? \n"
+                                             "A: So how do you survive then with less money? \n"
+                                             "B: And you've never stolen money from him, right? \n")
+                            if decision.lower() == 'a':
+                                print("I still get some money so I can live, but I can't live extravegently, it's so tiring. \n")
+                                time.sleep(1)
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the daughter has finished')
+                                DaughterInterrogation = True
+                                answer1 = True
+                                action = 9
+                            elif decision.lower() == 'b':
+                                print('Right...')
+                                time.sleep(3)
+                                print('Never')
+                                time.sleep(2)
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the daughter has finished')
+                                DaughterInterrogation = True
+                                answer1 = True
+                                action = 9
+                            else:
+                                print('Your answer must be A or B')
                     else:
                         print('Your answer must be A or B')
             else:
