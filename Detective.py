@@ -213,20 +213,24 @@ while play == True:
 
 
     if action == 9:
-        decision = input('Who would you like to interrogate? A: The butler  B: The cook  C: The daughter  D: The business partner  E: Go back \n'
-                         'Please note: You can only interrogate them one time. \n')
-        if decision.lower() == 'a':
-            action = 10
-        elif decision.lower() == 'b':
-            action = 11
-        elif decision.lower() == 'c':
-            action = 12
-        elif decision.lower() == 'd':
-            action = 13
-        elif decision.lower() == 'e':
+        if stage2 < 8:
+            print('Woah there, you gotta investigate at least 8 areas before you can interrogate!')
             action = 2
         else:
-            print('Your answer must be A, B, C, D, or E')
+            decision = input('Who would you like to interrogate? A: The butler  B: The cook  C: The daughter  D: The business partner  E: Go back \n'
+                             'Please note: You can only interrogate them one time. \n')
+            if decision.lower() == 'a':
+                action = 10
+            elif decision.lower() == 'b':
+                action = 11
+            elif decision.lower() == 'c':
+                action = 12
+            elif decision.lower() == 'd':
+                action = 13
+            elif decision.lower() == 'e':
+                action = 2
+            else:
+                print('Your answer must be A, B, C, D, or E')
 
     if action == 10:
         if ButlerInterrogation == True:
@@ -237,6 +241,10 @@ while play == True:
             if decision.lower() == 'yes':
                 print("The butler is a 25 year old male, and holds a warehouse job during the night. He's trying to support his parents as well, as they are struggling. \n"
                       "His parents also suffer from blood pressure issues, and bottles are getting expensive. \n")
+            elif decision.lower() == 'no':
+                print('Your loss')
+            else:
+                print('Yes or No here please.')
             decision = input('What would you like to ask the butler? \n'
                              'A: What were you doing up to the moment of his death? \n'
                              'B: What are your duties as a butler to Alistair? \n')
@@ -384,6 +392,10 @@ while play == True:
             if decision.lower() == 'yes':
                 print('The cook is a single 24 year old, who recently graduated from culinary school. He lives by himself in a rented apartment, and can be described as quite egotistical. \n')
                 time.sleep(2)
+            elif decision.lower() == 'no':
+                print('Your loss')
+            else:
+                print('Yes or No here please.')
             decision = input('What would you like to ask? \n'
                              'A: How is your relationship with Alistair? \n'
                              'B: What were you doing the evening when Alistair died? \n')
@@ -553,6 +565,10 @@ while play == True:
                       "In the past couple of years, Alistair realized his mistake and started spending less money on her, until she hopefully became self-sufficient. \n"
                       "However, it takes a long time for a bad habit to get fixed, especially if they grew up that way...\n")
                 time.sleep(3)
+            elif decision.lower() == 'no':
+                print('Your loss')
+            else:
+                print('Yes or No here please.')
             decision = input('What would you like to ask? \n'
                              'A: How is your relationship with your father? \n'
                              'B: What happened during your visit that day? \n')
@@ -737,6 +753,11 @@ while play == True:
                 print("The business partner is a married 35 year old male. 5 years ago, he and Alistair started a managing business. \n"
                       "All went smooth for them for 4 years, until last year, he had a proposition for Alistair on how to make the business better. \n"
                       "Alistair disagreed, they got into an argument, and it led into the partner being fired and Alistair assuming control of the business. \n")
+                time.sleep(3)
+            elif decision.lower() == 'no':
+                print('Your loss')
+            else:
+                print('Yes or No here please.')
             decision = input('What would you like to ask? \n'
                              'A: What happened in your business ventures with Alistair? \n'
                              'B: What happened in your meeting with Alistair that day? \n')
