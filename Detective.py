@@ -941,7 +941,7 @@ while play == True:
         if stage3 < 2:
             print('Woah there, you must interrogate at least 2 people before you can make you arrest.')
         if stage3 >= 2:
-            action = 15
+            action = 2
 
 
     if action == 15:
