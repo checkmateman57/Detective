@@ -990,6 +990,7 @@ while play == True:
         elif decision.lower() == 'no':
             print("Anyways, I hoped you enjoyed this game. Hopefully it wasn't too hard or too obvious, this is my first mystery game. \n")
             time.sleep(2)
+            action = 17
         else:
             print('Yes or No here please')
 
