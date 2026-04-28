@@ -725,3 +725,179 @@ while play == True:
                         print('Your answer must be A or B')
             else:
                 print('Your answer must be A or B')
+
+
+    if action == 13:
+        if PartnerInterrogation == True:
+            print("You already interrogated the business partner! You can't do that again.")
+            action = 9
+        else:
+            decision = input("You are now interrogating the business partner. Before you start, would you like to know some background info? \n")
+            if decision.lower() == 'yes':
+                print("The business partner is a married 35 year old male. 5 years ago, he and Alistair started a managing business. \n"
+                      "All went smooth for them for 4 years, until last year, he had a proposition for Alistair on how to make the business better. \n"
+                      "Alistair disagreed, they got into an argument, and it led into the partner being fired and Alistair assuming control of the business. \n")
+            decision = input('What would you like to ask? \n'
+                             'A: What happened in your business ventures with Alistair? \n'
+                             'B: What happened in your meeting with Alistair that day? \n')
+            if decision.lower() == 'a':
+                print("So me and Alistair started a management firm together, and it was going pretty good. \n"
+                      "Just last year, I had a stellar idea on how to improve the business, but he rejected my idea. \n"
+                      "I got pretty heated, and we got into a huge argument, and then I left the firm. \n")
+                time.sleep(3)
+                answer = False
+                while answer == False:
+                    decision = input('What would you like to ask next? \n'
+                                     'A: Why did he reject your idea? \n'
+                                     'B: Why did you leave the firm? \n')
+                    if decision.lower() == 'a':
+                        print("He said that it was a stupid idea that would cost the firm millions. \n"
+                              "In my opinion, I think it's because he couldn't bear the thought that someone other than him had a good idea. \n")
+                        time.sleep(2)
+                        answer = True
+                        answer1 = False
+                        while answer1 == False:
+                            decision = input('What would you like to ask next? \n'
+                                             'A: Were you looking to seek any action against Alistair? \n'
+                                             'B: Had tensions between you and Alistair existed before that argument? How strong did they last afterwards? \n')
+                            if decision.lower() == 'a':
+                                print("I wanted to go to the news and expose what kind of person he is. \n"
+                                      "He thinks he's so high and mighty, and I want people to realize that. \n")
+                                time.sleep(2)
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the business partner has finished')
+                                PartnerInterrogation = True
+                                answer1 = True
+                                action = 9
+                            elif decision.lower() == 'b':
+                                print("I mean yeah, they existed before the argument. After all, I was a partner to this guy. \n"
+                                      'I was technically an equal to this "High and Mighty guy" \n')
+                                time.sleep(1)
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the business partner has finished')
+                                PartnerInterrogation = True
+                                answer1 = True
+                                action = 9
+                            else:
+                                print('Your answer must be A or B')
+                    elif decision.lower() == 'b':
+                        print("I left the firm because there was some serious pressure from him, and also the fact that I couldn't stand being around this guy. \n")
+                        time.sleep(1)
+                        answer = True
+                        if PartnerEvidence == False:
+                            print('Were you going to seek any action against him? \n')
+                            time.sleep(1)
+                            print("I was going to go to the media so the world could see what kind of person he was. \n")
+                            time.sleep(1)
+                            print('Anything else you would like to tell me?')
+                            time.sleep(2)
+                            print("No, that's all.")
+                            time.sleep(1)
+                            print('Your interview with the business partner has finished')
+                            PartnerInterrogation = True
+                            action = 9
+                        else:
+                            answer1 = False
+                            while answer1 == False:
+                                decision = input('What would you like to ask next? \n'
+                                                 'A: Were you going to seek any action against Alistair? \n'
+                                                 'B: I noticed some cash missing in a bathroom you were in along with a note. Was that you? \n')
+                                if decision.lower() == 'a':
+                                    print("I was going to go to the media so the world could see what kind of person he was. \n")
+                                    time.sleep(1)
+                                    print('Anything else you would like to tell me?')
+                                    time.sleep(2)
+                                    print("No, that's all.")
+                                    time.sleep(1)
+                                    print('Your interview with the business partner has finished')
+                                    PartnerInterrogation = True
+                                    answer1 = True
+                                    action = 9
+                                elif decision.lower() == 'b':
+                                    print("Yes that was me. I consider it compensation for what he did to me. \n")
+                                    time.sleep(1)
+                                    print('Anything else you would like to tell me?')
+                                    time.sleep(2)
+                                    print("No, that's all.")
+                                    time.sleep(1)
+                                    print('Your interview with the business partner has finished')
+                                    PartnerInterrogation = True
+                                    answer1 = True
+                                    action = 9
+                                else:
+                                    print("Your answer must be A or B")
+                    else:
+                        print("Your answer must be A or B")
+            elif decision.lower() == 'b':
+                print("I went to Alistair to tell him how he sucked as a person and that I was going to the news to show what kind of person he is. \n")
+                time.sleep(1)
+                answer = False
+                while answer == False:
+                    decision = input('What would you like to ask next? \n'
+                                     'A: How did Alistair respond to your announcement? \n'
+                                     'B: How was the overall tone of your conversation? \n')
+                    if decision.lower() == 'a':
+                        print("He was surprising calm, and responded with saying that it didn't matter what I did, since he was already a rich and powerful person. \n")
+                        time.sleep(1)
+                        print('And did you have any thoughts on that? \n')
+                        time.sleep(1)
+                        print("Yeah, I went off on him saying how he was such a terrible and arrogant person, and he should go screw himself. \n")
+                        time.sleep(1)
+                        print('Anything else you would like to tell me?')
+                        time.sleep(2)
+                        print("No, that's all.")
+                        time.sleep(1)
+                        print('Your interview with the business partner has finished')
+                        PartnerInterrogation = True
+                        answer = True
+                        action = 9
+                    elif decision.lower() == 'b':
+                        print("I would say that I was pretty heated, while he remained annoyingly calm")
+                        time.sleep(1)
+                        answer = True
+                        answer1 = False
+                        while answer1 == False:
+                            decision = input('What would you like to ask next? \n'
+                                             'A: Did you do anything after the meeting ended? \n'
+                                             'B: Was there anything else during the conversation that was suspicious? Someone else maybe? \n')
+                            if decision.lower() == 'a':
+                                print('No, just went to the bathroom and left. \n')
+                                time.sleep(1)
+                                if PartnerEvidence == True:
+                                    print('Just before you go, could you just write a random blurb for me?')
+                                    time.sleep(1)
+                                    print('Sure')
+                                    time.sleep(1)
+                                    print('The style of writing matches the one found in the bathroom hidden compartment.')
+                                    time.sleep(3)
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the business partner has finished')
+                                PartnerInterrogation = True
+                                answer1 = True
+                                action = 9
+                            elif decision.lower() == 'b':
+                                print("No, maybe the butler walked about a few times, but I think that was normal. \n")
+                                time.sleep(1)
+                                print('Anything else you would like to tell me?')
+                                time.sleep(2)
+                                print("No, that's all.")
+                                time.sleep(1)
+                                print('Your interview with the business partner has finished')
+                                PartnerInterrogation = True
+                                answer1 = True
+                                action = 9
+                            else:
+                                print('Your answer must be A or B')
+                    else:
+                        print("Your answer must be A or B")
+            else:
+                print('Your answer must be A or B')
