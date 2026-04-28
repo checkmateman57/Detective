@@ -36,6 +36,10 @@ while play == True:
             action = 4
         elif decision.lower() == 'c':
             action = 9
+        elif decision.lower() == 'd':
+            action = 14
+        else:
+            print('Your answer must be A, B, C, or D')
 
 
     if action == 3:
@@ -922,3 +926,76 @@ while play == True:
                         print("Your answer must be A or B")
             else:
                 print('Your answer must be A or B')
+
+
+    if action == 14:
+        stage3 = 0
+        if ButlerInterrogation == True:
+            stage3 += 1
+        if CookInterrogation == True:
+            stage3 += 1
+        if DaughterInterrogation == True:
+            stage3 += 1
+        if PartnerInterrogation == True:
+            stage3 += 1
+        if stage3 < 2:
+            print('Woah there, you must interrogate at least 2 people before you can make you arrest.')
+        if stage3 >= 2:
+            action = 15
+
+
+    if action == 15:
+        decision = input('Who would you like to arrest for the murder of Alistair Vane? \n'
+                         'A: The butler  B: The cook  C: His daughter  D: His former business partner  \n')
+        if decision.lower() == 'a':
+            print('And your arrest is......')
+            time.sleep(5)
+            print('Incorrect!')
+            action = 16
+        elif decision.lower() == 'b':
+            print('And your arrest is......')
+            time.sleep(5)
+            print('Correct!')
+            time.sleep(1)
+            print('Congrats, you cracked the case!')
+            action = 16
+        elif decision.lower() == 'c':
+            print('And your arrest is......')
+            time.sleep(5)
+            print('Incorrect!')
+            action = 16
+        elif decision.lower() == 'd':
+            print('And your arrest is......')
+            time.sleep(5)
+            print('Incorrect!')
+            action = 16
+        else:
+            print('Your answer must be A, B, C, or D')
+
+
+    if action == 16:
+        decision = input('Would you like an explanation to the mystery? \n')
+        if decision.lower() == 'yes':
+            print('So basically there were clues that there were clams in the house, which Alistair was deathly allergic to. \n'
+                  "You could've gotten to the cook interview where he says that he and the butler eat in the kitchen, and delivers food to Alistair through the living room. \n"
+                  "In the living room, there was an ocean-like smelling pasta, which indicates shellfish, which means that the cook dropped a clam on the way there. \n"
+                  "The butler was stealing blood pressure meds for his family, the daughter was stealing money so she could buy expensive stuff, \n"
+                  "and the business partner was just kinda there, took a little money and hated Alistair.\n"
+                  "The cook killed because his ego couldn't stand Alistair insulting him. Might be a little bit of a lame reason, but hey, it's who you least expect right? \n"
+                  "Although the clues provided some good hints in my opinion.")
+            time.sleep(10)
+            print("Anyways, I hoped you enjoyed this game. Hopefully it wasn't too hard or too obvious, this is my first mystery game. \n")
+            time.sleep(2)
+            action = 17
+        elif decision.lower() == 'no':
+            print("Anyways, I hoped you enjoyed this game. Hopefully it wasn't too hard or too obvious, this is my first mystery game. \n")
+            time.sleep(2)
+        else:
+            print('Yes or No here please')
+
+
+    if action == 17:
+        play = False
+
+
+print("Thanks for playing! Hope you enjoyed it")
