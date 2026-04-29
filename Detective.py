@@ -1,5 +1,5 @@
 print('Welcome to this detective game!\n'
-      "A rich 50 year old man has is suspected of being murdered, and it's your job to figure out who!\n"
+      "Alistair Vane, a rich 50 year old man has been murdered, and it's your job to figure out who!\n"
       "The suspects are his daughter, the cook, the butler, and his past business partner.\n"
       "How does the saying go? It may be the one you suspect the least.\n"
       "But anyways, good luck!")
